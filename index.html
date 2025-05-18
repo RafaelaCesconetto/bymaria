@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BY Maria Saboaria Artesanal</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header>
+    <img src="https://via.placeholder.com/150x50?text=BY+Maria+Saboaria" alt="Logomarca da Loja" class="logo" />
+    <h1>BY Maria Saboaria Artesanal</h1>
+    <div class="login">
+      <input type="text" id="username" placeholder="Usuário" />
+      <button onclick="login()">Login</button>
+    </div>
+    <button onclick="toggleDarkMode()">🌙/☀️</button>
+  </header>
+
+  <nav>
+    <button onclick="verCarrinho()">Ver Carrinho (0)</button>
+    <a href="checkout.html"><button>Ir para Checkout</button></a>
+    <a href="pagamento.html"><button>Pagamento</button></a>
+    <a href="contato.html"><button>Contato</button></a>
+  </nav>
+
+  <main>
+    <section class="products">
+      <h2>Produtos em Destaque</h2>
+
+      <div class="product-card">
+        <h3>Sabonete de Argila</h3>
+        <p>100g | R$ 15,00</p>
+        <div class="product-images">
+          <img src="https://via.placeholder.com/150" alt="Argila - 1">
+          <img src="https://via.placeholder.com/150" alt="Argila - 2">
+          <img src="https://via.placeholder.com/150" alt="Argila - 3">
+          <img src="https://via.placeholder.com/150" alt="Argila - 4">
+          <img src="https://via.placeholder.com/150" alt="Argila - 5">
+        </div>
+        <select id="tipo-argila">
+          <option value="Branca">Branca</option>
+          <option value="Vermelha">Vermelha</option>
+          <option value="Verde">Verde</option>
+          <option value="Preta">Preta</option>
+        </select>
+        <button onclick="comprarSaboneteArgila()">Adicionar ao Carrinho</button>
+      </div>
+
+      <div class="product-card">
+        <h3>Sabonete Líquido Cacau & Calêndula</h3>
+        <p>250ml | R$ 35,00</p>
+        <div class="product-images">
+          <img src="https://via.placeholder.com/150" alt="Sabonete líquido - 1">
+          <img src="https://via.placeholder.com/150" alt="Sabonete líquido - 2">
+        </div>
+        <button onclick="adicionarAoCarrinho('Sabonete Líquido', 35)">Adicionar ao Carrinho</button>
+      </div>
+
+      <div class="product-card">
+        <h3>Difusor de Ambientes</h3>
+        <p>240ml | Frasco PET | R$ 55,00</p>
+        <div class="product-images">
+          <img src="https://via.placeholder.com/150" alt="Difusor - 1">
+          <img src="https://via.placeholder.com/150" alt="Difusor - 2">
+        </div>
+        <select id="aroma-difusor">
+          <option value="212 Rose">212 Rose</option>
+          <option value="Algodão Doce">Algodão Doce</option>
+          <option value="Capim Cidreira">Capim Cidreira</option>
+          <option value="Capim Limão e Hortelã">Capim Limão e Hortelã</option>
+          <option value="Chá Branco">Chá Branco</option>
+          <option value="Chá Verde">Chá Verde</option>
+          <option value="Coco Verde">Coco Verde</option>
+          <option value="Cravo e Canela">Cravo e Canela</option>
+          <option value="Lima da Pérsia">Lima da Pérsia</option>
+        </select>
+        <button onclick="comprarDifusor()">Adicionar ao Carrinho</button>
+      </div>
+
+      <div class="product-card">
+        <h3>Desodorante Natural</h3>
+        <p>30g | R$ 25,00</p>
+        <div class="product-images">
+          <img src="https://via.placeholder.com/150" alt="Desodorante - 1">
+        </div>
+        <button onclick="adicionarAoCarrinho('Desodorante Natural', 25)">Adicionar ao Carrinho</button>
+      </div>
+
+      <div class="product-card">
+        <h3>Água Perfumada</h3>
+        <p>240ml | Frasco PET | R$ 45,00</p>
+        <div class="product-images">
+          <img src="https://via.placeholder.com/150" alt="Água Perfumada - 1">
+          <img src="https://via.placeholder.com/150" alt="Água Perfumada - 2">
+        </div>
+        <select id="aroma-agua">
+          <option value="212 Rose">212 Rose</option>
+          <option value="Algodão Doce">Algodão Doce</option>
+          <option value="Capim Cidreira">Capim Cidreira</option>
+          <option value="Capim Limão e Hortelã">Capim Limão e Hortelã</option>
+          <option value="Chá Branco">Chá Branco</option>
+          <option value="Chá Verde">Chá Verde</option>
+          <option value="Coco Verde">Coco Verde</option>
+          <option value="Cravo e Canela">Cravo e Canela</option>
+          <option value="Lima da Pérsia">Lima da Pérsia</option>
+        </select>
+        <button onclick="comprarAguaPerfumada()">Adicionar ao Carrinho</button>
+      </div>
+    </section>
+
+    <section class="benefits">
+      <h2>Benefícios dos Produtos no Dia a Dia</h2>
+      <ul>
+        <li>Sabonetes de argila: esfoliação natural e cuidado com a pele.</li>
+        <li>Sabonete líquido: hidratação e proteção para as mãos.</li>
+        <li>Difusores: fragrâncias relaxantes e revigorantes para o ambiente.</li>
+        <li>Desodorante natural: proteção saudável, livre de alumínio.</li>
+        <li>Água perfumada: frescor e leveza para ambientes e tecidos.</li>
+      </ul>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-info">
+      <p>Entrega via Correios ou retirada em Vitória/ES</p>
+      <p>Contato: <a href="tel:27998555479">(27) 99855-5479</a></p>
+      <p><a href="contato.html">Pedidos Personalizados</a></p>
+    </div>
+    <p>&copy; 2024 - BY Maria Saboaria Artesanal</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
