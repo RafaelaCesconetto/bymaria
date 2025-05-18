@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Checkout - BY Maria</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <img src="https://via.placeholder.com/150x50?text=BY+Maria+Saboaria" class="logo" />
+    <h1>Checkout</h1>
+  </header>
+
+  <main>
+    <h2>Resumo do Pedido</h2>
+    <div id="resumo"></div>
+    <p><strong id="total"></strong></p>
+    <a href="pagamento.html"><button>Finalizar Pagamento</button></a>
+    <a href="index.html"><button>Voltar</button></a>
+  </main>
+
+  <script>
+    const carrinho = JSON.parse(localStorage.getItem("carrinho")) || [];
+    const resumo = document.getElementById("resumo");
+    const totalElem = document.getElementById("total");
+
+    if (carrinho.length === 0) {
+      resumo.innerHTML = "<p>O carrinho está vazio.</p>";
+      totalElem.textContent = "";
+    } else {
+      resumo.innerHTML = carrinho.map(p => `
+        <p>${p.produto} (${p.descricao}) - R$ ${p.preco.toFixed(2)}</p>
+      `).join('');
+      const total = carrinho.reduce((s, p) => s + p.preco, 0);
+      totalElem.textContent = `Total: R$ ${total.toFixed(2)}`;
+    }
+  </script>
+</body>
+</html>
